@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  content: MyText
+  user: one
+  deleted_at: 2019-07-18 21:19:15
+  is_public: false
+  archive: false
+
+two:
+  title: MyText
+  content: MyText
+  user: two
+  deleted_at: 2019-07-18 21:19:15
+  is_public: false
+  archive: false
