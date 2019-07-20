@@ -21,6 +21,11 @@
     <%= form.text_area :content, size: '100x20' %>
   </div>
 
+  <div class="field">
+    <%= form.label :youtube_video_id %>
+    <%= form.text_field :yt_video_id, size: '100' %>
+  </div>
+
   <div class="actions">
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.submit %>
