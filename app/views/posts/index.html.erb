@@ -1,29 +1,24 @@
-<h1>Posts</h1>
+<% @posts.each do |post| %>
+  <div class="post_container">
+    <div class="post_header">
+      <div class="post_title" onclick=show_post("<%= post.id %>")><%= post.title %></div>
+      <div class="post_metadata">
+        <%= link_to post.user.first_name, post.user %>
+        <%= time_ago_in_words(post.created_at.to_s, include_seconds: true) %>   ago
+      </div>
+    </div>
+    <div class="post_body">
+      <div class="post_content" onclick=show_post("<%= post.id %>")><%= post.content %></div>
+      <div class="post_activities"><%= link_to "Like" %></div>
+      <div class="post_comments">
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.user.first_name %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<script type="text/javascript">
+  function show_post(post_id){
+    window.scrollTo(0, 0);
+    window.location.href = "/posts/"+post_id;
+  }
+</script>

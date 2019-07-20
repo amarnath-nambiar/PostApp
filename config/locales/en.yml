@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+  datetime:
+    distance_in_words:
+      x_minutes:
+        one: "1min"
+        other: "%{count}min"
+      less_than_x_seconds:
+        one: "1sec"
+        other: "%{count}sec"

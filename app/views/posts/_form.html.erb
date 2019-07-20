@@ -13,25 +13,16 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_area :title %>
+    <%= form.text_area :title, size: '100x3' %>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_public %>
-    <%= form.check_box :is_public %>
+    <%= form.text_area :content, size: '100x20' %>
   </div>
 
   <div class="actions">
+    <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.submit %>
   </div>
 <% end %>
