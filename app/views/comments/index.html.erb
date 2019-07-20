@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>User</th>
-      <th>Commentable</th>
+      <th>Post</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.user %></td>
-        <td><%= comment.commentable %></td>
+        <td><%= comment.user.first_name %></td>
+        <td><%= comment.post_id %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
