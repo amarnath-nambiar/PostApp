@@ -10,13 +10,12 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments
+    @comments = @post.comments.order(updated_at: :desc).includes(:user)
   end
 
   # GET /posts/new
