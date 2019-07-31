@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.includes(:user)
+    if params[:user_id].present?
+      @posts = User.find(params[:user_id]).posts
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1

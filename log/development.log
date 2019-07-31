@@ -314,9 +314,9 @@ Migrating to AddDeviseToUsers (20190718161722)
   [1m[35m (31.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
 Started GET "/" for 127.0.0.1 at 2019-07-18 21:48:28 +0530
-  
+
 NoMethodError (undefined method `devise' for User (call 'User.connection' to establish a connection):Class):
-  
+
 app/models/user.rb:4:in `<class:User>'
 app/models/user.rb:1:in `<main>'
 config/routes.rb:2:in `block in <main>'
@@ -451,9 +451,9 @@ Processing by Devise::RegistrationsController#create as HTML
 Completed 500 Internal Server Error in 577ms (ActiveRecord: 1.8ms)
 
 
-  
+
 ActiveRecord::NotNullViolation (Mysql2::Error: Field 'first_name' doesn't have a default value: INSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`) VALUES ('2019-07-18 16:31:42', '2019-07-18 16:31:42', 'amarnathjoshy@gmail.com', '$2a$11$HXnrnuBYPnU.bgT4o3qFVeswlKBL8ho7YoabXs8tEupjB7zwRkXmy')):
-  
+
 mysql2 (0.5.2) lib/mysql2/client.rb:131:in `_query'
 mysql2 (0.5.2) lib/mysql2/client.rb:131:in `block in query'
 mysql2 (0.5.2) lib/mysql2/client.rb:130:in `handle_interrupt'
@@ -697,16 +697,16 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `first' for #<User:0x000000000491ed18>):
     4:   <%= render "devise/shared/error_messages", resource: resource %>
     5:   <div class="field">
     6:     <%= f.label :first_name %><br />
     7:     <%= f.text_field :first, autofocus: true, autocomplete: "first_name" %>
     8:   </div>
-    9: 
+    9:
    10:   <div class="field">
-  
+
 app/views/devise/registrations/new.html.erb:7:in `block in _app_views_devise_registrations_new_html_erb___2874825141969986725_41040140'
 app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___2874825141969986725_41040140'
 Started GET "/users/sign_up" for 127.0.0.1 at 2019-07-18 22:49:31 +0530
@@ -742,9 +742,9 @@ Unpermitted parameters: :first_name, :last_name
 Completed 500 Internal Server Error in 242ms (ActiveRecord: 1.7ms)
 
 
-  
+
 ActiveRecord::NotNullViolation (Mysql2::Error: Field 'first_name' doesn't have a default value: INSERT INTO `users` (`created_at`, `updated_at`, `email`, `encrypted_password`) VALUES ('2019-07-18 17:20:33', '2019-07-18 17:20:33', 'amarnathjoshy@gmail.com', '$2a$11$wXKW4hnMuZHMSXimp2h9Ve45Tt2d/IxMOq8Zz5CNl3X0/Fz5YnNeO')):
-  
+
 mysql2 (0.5.2) lib/mysql2/client.rb:131:in `_query'
 mysql2 (0.5.2) lib/mysql2/client.rb:131:in `block in query'
 mysql2 (0.5.2) lib/mysql2/client.rb:130:in `handle_interrupt'

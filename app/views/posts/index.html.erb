@@ -3,7 +3,7 @@
     <div class="post_header">
       <div class="post_title" onclick=show_post("<%= post.id %>")><%= post.title %></div>
       <div class="post_metadata">
-        <%= link_to post.user.first_name, post.user %>
+        <%= link_to post.user.first_name, posts_path(:user_id => post.user.id) %>
         <%= time_ago_in_words(post.created_at.to_s, include_seconds: true) %>   ago
       </div>
     </div>
