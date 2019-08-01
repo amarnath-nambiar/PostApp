@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments.order(updated_at: :desc).includes(:user)
+    @comments = @post.comments.order(updated_at: :desc).includes(:user, :replies)
   end
 
   # GET /posts/new

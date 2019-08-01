@@ -1,0 +1,7 @@
+<%= form_for([ comment, Reply.new ], remote: true) do |form| %>
+	Your Reply:</br>
+	<%= form.text_area :content, size: '20x2' %><br>
+	<%= form.submit "reply" %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :comment_id, value: comment.id %>
+<% end %>
