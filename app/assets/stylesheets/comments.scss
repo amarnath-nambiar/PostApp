@@ -3,7 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #user_comment{
   border: 1px solid #ccc;
-  margin: 5px;
+  margin-top: 5px;
   float: left;
-  width: 100%;
+  padding: 5px;
+  width: 68%;
+  background-color: #f5f5f5;
+}
+#user_comment:hover{
+  background-color: #fff;
 }

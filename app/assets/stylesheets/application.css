@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
- body {
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
     float: left;
     background-color: #fff;
     color: #333;
@@ -22,40 +26,67 @@
     line-height: 18px;
     margin: 0 auto;
     width: 100%;
- }
- a{
-   text-decoration: none;
- }
- a:hover {
-   color: #000;
-   background-color: inherit;
- }
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 6rem;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover {
+    color: #222;
+    background-color: inherit;
+}
 body div.navbar{
-  float: left;
-  background-color: #093b0d;
-  width:100% !important;
-  color: #fff !important;
+    float: left;
+    background-color: #093b0d;
+    width:100% !important;
+    color: #fff !important;
+}
+body div.navbar:hover{
+    background-color: #093b3f; 
 }
 .navbar-text{
-  padding: 5px;
+    padding: 5px;
 }
 .pull-right{
-  float: right;
-  margin-right: 10%;
+    float: right;
+    margin-right: 10%;
 }
 .body_container{
-  margin: 0 auto;
-  width:80%;
+    margin: 0 auto;
+    width:80%;
 }
 .flash_class{
-  height: 44px;
-  float:left;
-  width: 100%;
-  text-align: center;
+    height: 44px;
+    float:left;
+    width: 100%;
+    text-align: center;
 }
 p.alert{
-  border: 1px solid #ccc;
-  background-color: #edffef;
-  border-radius: 3px;
-  padding: 5px
+    border: 1px solid #ccc;
+    background-color: #edffef;
+    border-radius: 3px;
+    padding: 5px
 }
+.footer{
+    float: left;
+    width:100% !important;
+    color: #fff !important;
+    height: 50px;
+    margin-top: 50px;
+    position: absolute;
+    background-color: #093b3f;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
