@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :replies
+#  resources :replies
   devise_for :users
   resources :comments do
     resources :replies
