@@ -47,12 +47,15 @@ body div.navbar{
 body div.navbar:hover{
     background-color: #093b3f; 
 }
-.navbar-text{
-    padding: 5px;
+.pull-middle{
+    margin-left: 600px;
+    padding: 9px;
+    float: left;
 }
 .pull-right{
     float: right;
     margin-right: 10%;
+    margin-top: 14px;
 }
 .body_container{
     margin: 0 auto;
@@ -89,4 +92,15 @@ p.alert{
 *:after {
     box-sizing: inherit;
 }
-
+.navbar-text{
+    /*    float:left;*/
+}
+label.string{
+    display: none;
+}
+div.search_title{
+    float: left;
+}
+form.simple_form{
+    float:left; 
+}

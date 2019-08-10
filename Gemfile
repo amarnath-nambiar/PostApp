@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.6.2'
 # Paranoia is an ActiveRecord plugin allowing you to hide and restore records without actually deleting them
 gem "paranoia", "~> 2.2"
+#
+gem 'simple_form'
+
+gem 'bootstrap', '~> 4.2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   def index
     if params[:user_id].present?
       @posts = User.find(params[:user_id]).posts
+    elsif params[:search].present?
+      @posts = Post.where("title LIKE ?", "%#{params[:search][:title]}%")
     else
       @posts = Post.all
     end
