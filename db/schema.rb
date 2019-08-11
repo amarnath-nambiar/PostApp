@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_162449) do
+ActiveRecord::Schema.define(version: 2019_08_04_065450) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2019_07_18_162449) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "likeable_type"
+    t.bigint "likeable_id"
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.text "content"
@@ -31,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_162449) do
     t.boolean "archive", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "yt_video_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

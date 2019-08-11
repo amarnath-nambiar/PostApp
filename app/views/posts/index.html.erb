@@ -9,9 +9,8 @@
     </div>
     <div class="post_body">
       <div class="post_content" onclick=show_post("<%= post.id %>")><%= post.content %></div>
-      <div class="post_activities"><%= link_to "Like" %></div>
-      <div class="post_comments">
-      </div>
+      <div class="post_activities"><%= link_to "Like",post_likes_path(post) ,class: "post_comments"%></div>
+      <div class="post_status"></div>
     </div>
   </div>
 <% end %>
@@ -21,4 +20,23 @@
     window.scrollTo(0, 0);
     window.location.href = "/posts/"+post_id;
   }
+  $(".post_comments").click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      $.ajax({
+          url: $(this).attr('href'),
+          type:'POST',
+          dataType:'json',
+          success:function(data){
+              if(data["success"]){
+                  debugger;
+                  $(this).append("You Liked this message");
+              }
+          },
+          error:function(data){
+              alert("Something went Wrong");
+          }
+      });
+  });
 </script>
