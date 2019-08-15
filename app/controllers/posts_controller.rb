@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   def index
     if params[:user_id].present?
       @posts = User.find(params[:user_id]).posts
+    elsif params[:search].present?
+      @posts = Post.where("title LIKE ?", "%#{params[:search][:title]}%")
     else
       @posts = Post.all
     end
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments.order(updated_at: :desc).includes(:user)
+    @comments = @post.comments.order(updated_at: :desc).includes(:user, :replies)
   end
 
   # GET /posts/new

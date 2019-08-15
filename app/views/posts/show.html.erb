@@ -66,6 +66,8 @@
 </script>
 <h2>Comments</h2>
 <div id="comments">
-<%= render 'comments/new', post: @post %>
-<%= render @comments %>
+    <%= render 'comments/new', post: @post %>
+    <div class="comment">
+        <%= render @comments %>
+    </div>
 </div>

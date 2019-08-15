@@ -1,0 +1,4 @@
+<div id="user_reply">
+  <b><%=reply.user.first_name %></b>
+  <span><%= reply.content %> at <%= time_ago_in_words(reply.created_at.to_s, include_seconds: true) %> ago</span>
+</div>

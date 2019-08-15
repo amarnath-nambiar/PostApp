@@ -5,13 +5,22 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_include_tag "application" %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div class="navbar">
-      <p class="navbar-text pull-right">
+      <div class="navbar-text pull-left">
+
+      </div>
+      <div class="navbar-text pull-middle">
+          <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+            <%= f.input :title, input_html: {value: ""} %>   
+            <%= f.submit "Search", class: "btn btn-primary" %>
+          <% end %>
+      </div>
+      <div class="navbar-text pull-right">
         <% if user_signed_in? %>
           <strong><%= current_user.first_name %></strong> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -19,7 +28,7 @@
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
-      </p>
+      </div>
     </div>
     <div class="body_container">
       <div class="flash_class" id="flash_id">
@@ -31,6 +40,9 @@
         <% end %>
       </div>
       <%= yield %>
+    </div>
+    <div class="footer">
+        
     </div>
   </body>
 </html>

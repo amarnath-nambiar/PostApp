@@ -1,4 +1,6 @@
 <div id="user_comment">
   <b><%=comment.user.first_name %></b>
   <span><%= comment.content %> at <%= time_ago_in_words(comment.created_at.to_s, include_seconds: true) %> ago</span>
-<div>
+  <%= render 'replies/new', comment: comment %>
+  <%= render comment.replies %>
+</div>
