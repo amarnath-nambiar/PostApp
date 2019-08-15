@@ -7,6 +7,10 @@
   border-radius: 3px;
   padding: 10px;
   margin-bottom: 10px;
+  width: 51%;
+  height: 132px;
+  overflow: hidden;
+    text-overflow: ellipsis;
 }
 .post_container:hover{
   background-color: #edffef;
@@ -17,4 +21,14 @@
 }
 .comment{
     width:50%
+}
+.post_content{
+  height: 55px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    color: #4E4E4E;
+}
+.post_title{
+    font-weight: bold;
+    color: #4E4E4E;
 }
