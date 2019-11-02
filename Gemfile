@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Adding Authentication with Devise
-gem 'devise', '~> 4.6.2'
+gem 'devise', '~> 4.7.1'
 # Paranoia is an ActiveRecord plugin allowing you to hide and restore records without actually deleting them
 gem "paranoia", "~> 2.2"
 #
